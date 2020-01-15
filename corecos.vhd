@@ -92,7 +92,7 @@ begin
 	);
 
 
-	debug_proc: process (I_switches, R_mem_address, R_mem_data_write, R_mem_we_bytes, R_debug_data, R_debug_flags) is
+	debug_proc: process (I_switches, R_debug_data, R_debug_flags, R_mem_data_write, R_mem_address, R_mem_we_bytes) is
 	begin
 		if I_switches(0) = '1' then
 			if I_switches(5) = '1' then

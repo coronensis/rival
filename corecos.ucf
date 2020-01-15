@@ -38,13 +38,6 @@ NET "O_leds<6>" LOC = "P12";
 NET "O_leds<7>" LOC = "P11";
 
 #========================================================
-# RS232
-#========================================================
-
-NET "I_uart_rx"  LOC = "T13" | DRIVE=8 | SLEW=SLOW;
-NET "O_uart_tx"  LOC = "R13" | DRIVE=8 | SLEW=SLOW;
-
-#========================================================
 # 4-digit time-multiplexed 7-segment LED display
 #========================================================
 
@@ -61,72 +54,4 @@ NET "O_sseg<4>" LOC = "N15";
 NET "O_sseg<5>" LOC = "G13";
 NET "O_sseg<6>" LOC = "E14";
 NET "O_sseg<7>" LOC = "P16";
-
-#========================================================
-# Two SRAM chips
-#========================================================
-
-NET "O_ram_ce1_n" LOC = "P7" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_ce2_n" LOC = "N5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-
-NET "O_ram_lb1_n" LOC = "P6" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_lb2_n" LOC = "P5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-
-NET "O_ram_ub1_n" LOC = "T4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_ub2_n" LOC = "R4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-
-NET "O_ram_oe_n"  LOC = "K4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_we_n"  LOC = "G3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-
-NET "O_ram_address<2>"  LOC = "L5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<3>"  LOC = "N3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<4>"  LOC = "M4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<5>"  LOC = "M3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<6>"  LOC = "L4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<7>"  LOC = "G4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<8>"  LOC = "F3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<9>"  LOC = "F4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<10>" LOC = "E3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<11>" LOC = "E4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<12>" LOC = "G5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<13>" LOC = "H3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<14>" LOC = "H4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<15>" LOC = "J4" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<16>" LOC = "J3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<17>" LOC = "K3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<18>" LOC = "K5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "O_ram_address<19>" LOC = "L3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-
-NET "IO_ram_data<0>"  LOC = "P2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<1>"  LOC = "N2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<2>"  LOC = "M2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<3>"  LOC = "K1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<4>"  LOC = "J1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<5>"  LOC = "G2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<6>"  LOC = "E1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<7>"  LOC = "D1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<8>"  LOC = "D2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<9>"  LOC = "E2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<10>" LOC = "G1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<11>" LOC = "F5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<12>" LOC = "C3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<13>" LOC = "K2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<14>" LOC = "M1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<15>" LOC = "N1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<16>" LOC = "N7" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<17>" LOC = "T8" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<18>" LOC = "R6" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<19>" LOC = "T5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<20>" LOC = "R5" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<21>" LOC = "C2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<22>" LOC = "C1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<23>" LOC = "B1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<24>" LOC = "D3" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<25>" LOC = "P8" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<26>" LOC = "F2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<27>" LOC = "H1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<28>" LOC = "J2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<29>" LOC = "L2" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<30>" LOC = "P1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
-NET "IO_ram_data<31>" LOC = "R1" | IOSTANDARD = LVCMOS33 | SLEW=FAST;
 

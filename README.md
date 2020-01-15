@@ -16,7 +16,7 @@ according to Google).
 ## Motivation
 
 + Pastime
-+ Get in touch with RISC-V
++ Get a taste of RISC-V
 + The special kind of entertainment that comes from developing
  and bringing up a system without proper debugging tools
 + Next step after [Dwarf](https://github.com/coronensis/dwarf)
@@ -25,8 +25,8 @@ according to Google).
 ## General Characteristics
 
 Aims at implementing the RISC-V RV32I profile according to the specification.
-Not quite there yet, but the CPU already executes code compiled with  the
-RISC-V gcc toolchain. Next to extend the CPU environment to be able to
+Not quite there yet, but the CPU already executes code compiled with the
+RISC-V gcc toolchain. Next step is to extend the CPU environment to be able to
 run the  [RISC-V Compliance test suite](https://github.com/riscv/riscv-compliance). I expect a good part of it to pass right from the start...
 
 + Implements the FENCE and ECALL instructions as a NOPs

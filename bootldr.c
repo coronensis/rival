@@ -9,6 +9,8 @@ const char *message = "Hello Rival!";
 /* Delay by wasting CPU cycles. No HW timers are currently available */
 void delay (uint32_t value)
 {
+	/* volatile keeps the compiler from "optimizing" this whole
+	 * function away */
 	volatile uint32_t i;
 	for (i = 0; i < value; i++)
 		;

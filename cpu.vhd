@@ -217,7 +217,7 @@ begin
 -- Program Counter
 ----------------------------------------------------------------------------------------------------------
 
-	pc_proc: process (I_clk, R_mctrl_cpu_pause, R_take_branch, R_pc_source, R_alu_res) is
+	pc_proc: process (I_clk, R_mctrl_cpu_pause, R_take_branch, R_pc_source, R_alu_res, R_loc_pc_current) is
 		variable pc_next_var : std_logic_vector(31 downto 2);
 	begin
 		-- Default case. increment he program counter by four
@@ -258,7 +258,9 @@ begin
 -- Memory controller
 ----------------------------------------------------------------------------------------------------------
 
-	mctrl_proc: process (I_clk, R_pc_next, R_mem_source, R_ram_data_read, R_regs_rs2_value, R_alu_res) is
+	mctrl_proc: process (I_clk, R_pc_next, R_mem_source, R_ram_data_read, R_regs_rs2_value, R_alu_res,
+	       		     R_loc_mctrl_mem_state, R_loc_mctrl_instruction, R_loc_mctrl_instruction_next,
+			     R_loc_mctrl_address, R_loc_mctrl_mem_we) is
 
 		variable address_next_var      : std_logic_vector(31 downto 2);
 		variable ram_read_var	       : std_logic_vector(31 downto 0);
@@ -395,7 +397,8 @@ begin
 -- Instruction Decoder
 ----------------------------------------------------------------------------------------------------------
 
-	decoder_proc: process (R_instruction, R_alu_res, R_regs_rs1_value, R_regs_rs2_value, R_pc_current, R_ram_read_val) is
+	decoder_proc: process (R_instruction, R_alu_res, R_regs_rs1_value, R_regs_rs2_value, R_pc_current,
+	       		       R_ram_read_val, R_pc_enable_decoder) is
 		variable opcode_var          : std_logic_vector(6 downto 0);
 		variable rd_idx_var          : std_logic_vector(4 downto 0);
 		variable funct3_var          : std_logic_vector(2 downto 0);
@@ -955,8 +958,8 @@ begin
 
 	bxxx : RAMB16_S9
 	generic map (
-		INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
-		INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
+		INIT_00 => X"231383b31303831393132323232323b723136f2393836713638323136fef136f",
+		INIT_01 => X"00000000000000000000000000000004ac00766f48671313038303830383e3ef",
 		INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -1033,8 +1036,8 @@ begin
 
 	xbxx : RAMB16_S9
 	generic map (
-		INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
-		INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
+		INIT_00 => X"0004c7878527270984042e2426282cc42a01f02687278001e6272601f0000100",
+		INIT_01 => X"0000000000000000000000000000000000006120658001052a292924242010f0",
 		INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -1111,8 +1114,8 @@ begin
 
 	xxbx : RAMB16_S9
 	generic map (
-		INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
-		INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
+		INIT_00 => X"f71407870400c0c004001141312181be91015ff117c10001a7c101019f00c040",
+		INIT_01 => X"0000000000000000000000000000000000006c526c00010081c1014181c1241f",
 		INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -1189,8 +1192,8 @@ begin
 
 	xxxb : RAMB16_S9
 	generic map (
-		INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
-		INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
+		INIT_00 => X"00000000000c0b00c20000010101000000fefe0000000001000000ffff037f00",
+		INIT_01 => X"00000000000000000000000000000020000021696c000200000001010101fff9",
 		INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
 		INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
