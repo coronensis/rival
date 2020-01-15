@@ -1,0 +1,27 @@
+
+Spartan-3 Starter Board
+
+ 7 6 5 4 3 2 1 0
+[* * * * * * * *]  <- Switches
+
+
+ [0] ->  1 debug mode (1 Hz clock, debug data mapped to sev. seg.)
+	 0 normal mode (25 MHz, program controlled data on sev sev).
+
+[76] -> 00 R_instruction
+        01 R_pc_next & "00"
+        10 R_alu_res
+        11 R_ram_data_read
+
+
+ [5] ->  1 (31 downto 16) of debug data
+         0 (15 downto 0) of debug data
+
+ [4] -> 1 dots (7 downto 4) -> [R_pc_enable_decoder].1  [R_mctrl_cpu_pause].1  [R_loc_mctrl_select_bytes].2
+        0 dots (3 downto 0) -> [R_loc_mctrl_mem_we].4
+
+
+
+
+
+

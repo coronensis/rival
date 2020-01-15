@@ -1,5 +1,5 @@
 # Rival - A RISC-V RV32I Softcore CPU
-  
+
 ## Overview
 
 A simple RISC-V RV32I implementation based on my previous journey
@@ -13,7 +13,6 @@ After considering "River" and "Raven" (both are already taken) I settled
 with "Rival" which seem to be stil unoccupied in this domain (at least
 according to Google).
 
-
 ## Motivation
 
 + Pastime
@@ -26,7 +25,7 @@ according to Google).
 ## General Characteristics
 
 Aims at implementing the RISC-V RV32I profile according to the specification.
-Not quite there yet, but the CPU already executes code compiled with  the 
+Not quite there yet, but the CPU already executes code compiled with  the
 RISC-V gcc toolchain. Next to extend the CPU environment to be able to
 run the  [RISC-V Compliance test suite](https://github.com/riscv/riscv-compliance). I expect a good part of it to pass right from the start...
 
@@ -34,7 +33,7 @@ run the  [RISC-V Compliance test suite](https://github.com/riscv/riscv-complianc
 + Two-stage pipeline
 + **No** cache, branch prediction, out of order execution, speculative execution, MMU
 
-Beware: Uses non-standard VHDL including Xilinx specific stuff. 
+Beware: Uses non-standard VHDL including Xilinx specific stuff.
 This should easily be replaceable if someone ever feels the urge to port this thing.
 
 ## Documentation
@@ -61,6 +60,10 @@ Developed under GNU/Linux - [Debian](https://www.debian.org/) distribution
 + Tested on the [Spartan®-3 Starter Board](https://store.digilentinc.com/spartan-3-board-retired/). This board is rather old and no longer available.
 
 ## References
+
+Recommended Reading
+
+[RISC-V Specifications](https://riscv.org/specifications/)
 
 ## Homepage And Source Code Repository
 
