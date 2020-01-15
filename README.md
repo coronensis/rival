@@ -1,4 +1,4 @@
-# Rival - A RISC-V RV32I Softcore CPU
+# Rival - A RISC-V RV32I CPU
 
 ## Overview
 
@@ -44,11 +44,13 @@ This should easily be replaceable if someone ever feels the urge to port this th
 
 Building a GCC based RISC-V RV32I bare-metal toolchain:
 
+```
 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 cd riscv-gnu-toolchain
 ./configure --prefix=/opt/riscv --with-arch=rv32i --with-abi=ilp32
 make
 (or sudo make, depending on your access rights to the target directory)
+```
 
 Don't forget to add /opt/riscv/bin to your PATH environment variable.
 
