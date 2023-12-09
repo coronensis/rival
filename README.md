@@ -8,7 +8,7 @@ Focused on concepts and simplicity rater than on completeness or
 (serious i.e. industrial) real-world useability.
 
 Contrary to what the name suggests, it rivals nothing.
-I just needed a name for the project that contained "Ri"(sc) and "V" :)
+I just needed a name for the project that contained "RI"(SC) and "V" :)
 After considering "River" and "Raven" (both are already taken) I settled
 with "Rival" which seem to be stil unoccupied in this domain (at least
 according to Google).
@@ -66,6 +66,7 @@ Developed under GNU/Linux - [Debian](https://www.debian.org/) distribution
 Recommended Reading
 
 [RISC-V Specifications](https://riscv.org/specifications/)
+[Computer Organization and Design RISC-V Edition](https://www.amazon.com/Computer-Organization-Design-RISC-V-Architecture/dp/0128122757)
 
 ## Homepage And Source Code Repository
 
