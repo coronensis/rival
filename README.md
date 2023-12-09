@@ -65,8 +65,9 @@ Developed under GNU/Linux - [Debian](https://www.debian.org/) distribution
 
 Recommended Reading
 
-[RISC-V Specifications](https://riscv.org/specifications/)
 [Computer Organization and Design RISC-V Edition](https://www.amazon.com/Computer-Organization-Design-RISC-V-Architecture/dp/0128122757)
+
+[RISC-V Specifications](https://riscv.org/specifications/)
 
 ## Homepage And Source Code Repository
 
